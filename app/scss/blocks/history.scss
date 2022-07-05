@@ -1,0 +1,113 @@
+.history {
+  &-cards {
+    margin-bottom: 30px;
+    @include _480 {
+      margin-bottom: 20px;
+    }
+    &__item {
+      border-radius: 5px;
+      max-width: 140px;
+      height: 195px;
+      position: relative;
+      transition: transform .3s linear;
+      cursor: pointer;
+      filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.2));
+      &:hover {
+        &:before {
+          opacity: 0;
+        }
+        & .history-cards__title, .history-cards__date {
+          opacity: 0;
+        }
+      }
+      &:before {
+        position: absolute;
+        content: '';
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 52.08%, rgba(0, 0, 0, 0.406154) 76.41%, rgba(0, 0, 0, 0.8) 100%), url(.jpg);
+        transition: opacity .3s linear;
+      }
+    }
+    &__preview {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    &__title {
+      position: absolute;
+      top: 14px;
+      left: 13px;
+      width: 130px;
+      transition: opacity .3s linear;
+      @include _480 {
+        font-size: 12px;
+        width: 110px;
+      }
+    }
+    &__date {
+      position: absolute;
+      bottom: 14px;
+      right: 17px;
+      width: max-content;
+      transition: opacity .3s linear;
+      @include _480 {
+        font-size: 12px;
+      }
+    }
+  }
+  &-form {
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background: #121212;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.45);
+    border-radius: 5px;
+    &__input {
+      width: 100%;
+      resize: none;
+      overflow: hidden;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--main-color);
+      font-size: 16px;
+      line-height: 1.2;
+    }
+    &__buttons {
+      display: flex;
+      margin-left: 50px;
+    }
+    &__button {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      &_photo {
+        background: #EBEBEB;
+        border-radius: 50%;
+      }
+      &_send {
+        background: #3137C9;
+        border-radius: 50%;
+      }
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+    }
+    &_focus {
+      flex-direction: column;
+      align-items: flex-start;
+      & .history-form__buttons {
+        margin-left: 0;
+      }
+    }
+  }
+}

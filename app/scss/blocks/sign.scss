@@ -1,0 +1,51 @@
+.sign {
+  max-width: 500px;
+  margin: 0 auto;
+  &__title {
+    font-size: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  &__links {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+  }
+  &__link {
+    color: var(--main-color);
+    font-size: 18px;
+    line-height: 18px;
+    text-decoration: none;
+  }
+  &__button {
+    display: block;
+    width: max-content;
+    font-size: 18px;
+    line-height: 20px;
+    color: var(--main-color);
+    padding: 8px 15px;
+    border-radius: 5px;
+    margin: 0 auto;
+  }
+}
+.form-sign {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  &__label {
+    margin-bottom: 25px;
+  }
+  &__input {
+    width: 100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #3F3F3F;
+    padding-bottom: 9px;
+    color: var(--main-color);
+    font-size: 20px;
+    line-height: 20px;
+  }
+}

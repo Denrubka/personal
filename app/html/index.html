@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru-RU">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Blog | Главная</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
+  />
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+
+<body>
+@@include("./blocks/preloader.html")
+<div class="page-wrapper">
+  @@include("./blocks/sidebar.html")
+  <div class="main-wrapper">
+    @@include("./blocks/header.html")
+    <div class="container">
+      @@include("./blocks/history.html")
+      @@include("./blocks/posts.html")
+      <div class="pagination">
+        <button type="button" class="pagination__button pagination__button_prev"> < </button>
+        <button type="button" class="pagination__button pagination__button_active">1</button>
+        <button type="button" class="pagination__button">2</button>
+        <button type="button" class="pagination__button">3</button>
+        <button type="button" class="pagination__button pagination__button_next"> > </button>
+      </div>
+    </div>
+  </div>
+  @@include("./blocks/modal-contact.html")
+</div>
+
+<script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+<script src="js/main.js" ></script>
+</body>
+</html>

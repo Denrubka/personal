@@ -1,0 +1,81 @@
+@import 'variables'; //пишем переменные
+@import 'reset'; //сборс стилей
+@import 'fonts'; //подключаем шрифты (локально)
+@import "mixins";
+@import "blocks/preloader";
+:root {
+  --bg-color: #181818;
+  --main-color: #fff;
+  --secondary-color: #dedede;
+  --button-red: #ED3024;
+  --button-blue: #3137C9;
+  --header-bg: #0D0D0D;
+}
+.container {
+  max-width: 1140px;
+  padding: 0 15px;
+  width: 100%;
+  margin: 0 auto;
+}
+body {
+  position: relative;
+  background: var(--bg-color);
+  font-family: $main-font;
+  color: var(--main-color);
+  line-height: 1.2;
+}
+button {
+  border: none;
+  cursor: pointer;
+}
+.button-red {
+  background: var(--button-red);
+  box-shadow: 0px 7px 17px -10px rgba(242, 63, 63, 0.2);
+}
+.button-blue {
+  background: var(--button-blue);
+  box-shadow: 0px 7px 17px -10px rgba(32, 84, 219, 0.35);
+}
+.page-wrapper {
+  display: flex;
+  position: relative;
+}
+.main-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.dropdown-block {
+  max-height: 0;
+  transition: all .3s linear;
+}
+.form-label {
+  position: relative;
+  &:before {
+    position: absolute;
+    content: '';
+    width: 0;
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    background-color: #107EFF;
+    transition: all .3s linear;
+  }
+  &_active {
+    &:before {
+      width: 100%;
+    }
+  }
+}
+svg {
+  color: var(--main-color);
+}
+
+//подключаем БЭМ блоки
+@import 'blocks/sidebar';
+@import 'blocks/header';
+@import 'blocks/history';
+@import 'blocks/posts';
+@import 'blocks/pagination';
+@import "blocks/modal";
+@import "blocks/sign";
